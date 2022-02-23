@@ -10,10 +10,9 @@ public class Bonnetje {
     private String foutmelding;
 
     public Bonnetje(int opgenomenBedrag, HashMap<Briefgeld, Integer> ontvangenBriefjes) {
-        this.isSucces = isSucces;
+        this.isSucces = true;
         this.opgenomenBedrag = opgenomenBedrag;
         this.ontvangenBriefjes = ontvangenBriefjes;
-        this.foutmelding = foutmelding;
     }
 
     public Bonnetje(String foutmelding) {
