@@ -59,4 +59,8 @@ public class GeldAutomaat {
 
         return container;
     }
+
+    public int getVoorraad() {
+        return geldVoorraad;
+    }
 }

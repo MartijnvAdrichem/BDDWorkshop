@@ -11,19 +11,21 @@ Functionaliteit: Geld opnemen bij een geldautomaat
   Abstract Scenario: Geld opnemen met voldoende saldo gaat goed
     Gegeven een geldautomaat met een voorraad van 250 euro
     Als de klant <bedrag> euro opneemt bij de geldautomaat en pincode 1234 invoert
-    Dan krijgt de klant de volgende briefjes geld:
-    | briefjesVan10 | <briefjesVan10> |
-    | briefjesVan20 | <briefjesVan20> |
-    | briefjesVan50 | <briefjesVan50> |
+    Dan staat er nog <resterentSaldo> euro saldo op de rekening
+    En staat is er nog <resterendeVoorraad> euro voorraad in de geldautomaat
+    En krijgt de klant de volgende briefjes geld:
+      | briefjesVan10 | <briefjesVan10> |
+      | briefjesVan20 | <briefjesVan20> |
+      | briefjesVan50 | <briefjesVan50> |
 
     Voorbeelden:
-      | bedrag | briefjesVan10 | briefjesVan20 | briefjesVan50 |
-      | 100    | 0             | 0             | 2             |
-      | 90     | 0             | 2             | 1             |
-      | 60     | 1             | 0             | 1             |
-      | 30     | 1             | 1             | 0             |
-      | 20     | 0             | 1             | 0             |
-      | 10     | 1             | 0             | 0             |
+      | bedrag | briefjesVan10 | briefjesVan20 | briefjesVan50 | resterentSaldo | resterendeVoorraad |
+      | 100    | 0             | 0             | 2             | 100            | 150                |
+      | 90     | 0             | 2             | 1             | 110            | 160                |
+      | 60     | 1             | 0             | 1             | 140            | 190                |
+      | 30     | 1             | 1             | 0             | 170            | 220                |
+      | 20     | 0             | 1             | 0             | 180            | 230                |
+      | 10     | 1             | 0             | 0             | 190            | 240                |
 
 
   Scenario: Geld opnemen terwijl de automaat geen voorraad heeft geeft een foutmelding

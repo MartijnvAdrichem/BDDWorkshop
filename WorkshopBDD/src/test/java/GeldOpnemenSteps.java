@@ -56,4 +56,14 @@ public class GeldOpnemenSteps {
     public void wordtDeFoutmeldingGetoond(String foutmelding) {
        Assert.assertEquals(foutmelding, context.resultaat.getFoutmelding());
     }
+
+    @Dan("staat er nog {int} euro saldo op de rekening")
+    public void staatErNogEuroSaldoOpDeRekening(int saldo) {
+        Assert.assertEquals(saldo, context.rekening.getSaldo());
+    }
+
+    @En("staat is er nog {int} euro voorraad in de geldautomaat")
+    public void staatIsErNogEuroVoorraadInDeGeldautomaat(int voorraad) {
+        Assert.assertEquals(voorraad, context.geldAutomaat.getVoorraad());
+    }
 }
